@@ -4,16 +4,48 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Wine at Home" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Wine Tasting at Home" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
   </head>
+<body>
+      <div class="top-bar-right">
+        <ul class="menu">
+          <% if user_signed_in? %>
+          <li><%= image_tag current_user.avatar.url, id: "profile-picture", size: "30x30" %></li>
+          <li><%= link_to 'Profile', user_path(current_user) %></li>
+          <li><%= link_to('Sign Out', destroy_user_session_path, method: :delete) %>
+          </li>
+          <% else %>
+          <li><%= link_to 'Sign In', new_user_session_path %></li>
+          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+          <% end %>
+          <% if flash[:notice] %>
+          <div class="notice"><%= flash[:notice] %></div>
+          <% elsif flash[:alert] %>
+          <div class="alert"><%= flash[:alert] %></div>
+          <% end %>
+        </ul>
+      </div>
 
-  <body>
+    <nav aria-label="You are here:" role="navigation">
+      <ul class="breadcrumbs">
+        <li><a><%= link_to 'Home', root_path %></li>
+          <li><a href="#">About</a></li>
+        <% if current_user && current_user.admin == true %>
+        <li><%= link_to 'All Users', admin_users_path %></li>
+        <% end %></a>
+        <li><a><%= link_to "Add a Tasting", new_tasting_path %></a></li>
+
+      </ul>
+   </nav>
 
     <%= yield %>
+
 
   </body>
 </html>
