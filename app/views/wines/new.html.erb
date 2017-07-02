@@ -1,0 +1,42 @@
+<%= form_for [@tasting, @wine] do |f| %>
+<%= @tasting.name %>
+  <div class="row">
+    <div class="small-10 small-center columns">
+      <%= f.label :name, "Wine" %>
+      <%= f.text_field :name %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-10 small-center columns">
+      <%= f.label :appellation, "Region" %>
+      <%= f.text_field :appellation %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-10 small-center columns">
+      <%= f.label :varietal, "Grape/s" %>
+      <%= f.text_field :varietal %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-10 small-center columns">
+      <%= f.label :year %>
+      <%= f.text_field :year %>
+    </div>
+  </div>
+
+    <div class="field">
+      <%= f.hidden_field :tasting_id, value: @tasting.id %>
+    </div>
+
+    <div class="row">
+      <div class="actions">
+        <div class="small-10 small-center columns">
+          <%= f.submit "Add Wines" %>
+        </div>
+      </div>
+    </div>
+  <% end %>

@@ -17,3 +17,9 @@
 /yarn-error.log
 /coverage
 .byebug_history
+/node_modules
+/app/assets/javascripts/bundle.js
+/react/coverage
+
+# Ignore application configuration
+/config/application.yml

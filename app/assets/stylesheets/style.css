@@ -1,0 +1,56 @@
+
+*{
+font-family: 'Abril Fatface', cursive;
+}
+h1 {
+font-family: 'Abril Fatface', cursive;
+text-align: center;
+}
+
+
+.top-bar {
+  background-color: black;
+  color: white;
+  font-size: 24px;
+  text-align: justify;
+
+}
+.menu-text {
+  background-color: black;
+  font-size: 30px;
+}
+.breadcrumbs {
+  font-size: 20px;
+  padding-left: 15px;
+}
+.header {
+  padding-top: 30px;
+}
+
+.card-section p {
+  font-family: 'Fjalla One', sans-serif;
+
+}
+
+.card {
+  padding-top: 30px;
+  margin: auto;
+
+
+}
+
+.box {
+margin: auto;
+}
+
+
+.title {
+  color: #cc0000;
+}
+.items {
+  color: white;
+  font-size: 20px;
+}
+.button {
+  font-size: 18px;
+}

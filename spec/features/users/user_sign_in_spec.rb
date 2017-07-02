@@ -10,6 +10,7 @@ feature 'user signs in' do
     password_confirmation: 'password'
   )}
 
+
   scenario 'user enters correct email and password' do
     visit root_path
     click_link 'Sign In'

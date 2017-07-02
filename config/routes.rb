@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'tastings#index'
+  get "/pages/:page" => "pages#about"
+
   devise_for :users
   resources :users
   resources :tastings do
