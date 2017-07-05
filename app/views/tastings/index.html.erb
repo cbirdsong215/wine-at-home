@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <div class="header">
   <img class="orbit-image" src="https://s3.us-east-2.amazonaws.com/wine-tasting-at-home/winedisplay.jpg" alt="Space">
-  <h1 class="text-center">Choose Your Tasting</h1>
+  <h1 class="text-center" style="padding-top: 25px;">Choose Your Tasting</h1>
   </div>
 
 
@@ -12,7 +12,7 @@
     <div class="card" style="width: 300px;">
       <div class="card-divider">
         <div class="text-center">
-         <span data-tooltip aria-haspopup="true" class="has-tip" title="<%=tasting.name %>"><%= link_to tasting.name, tasting_wines_path(tasting) %></span>
+         <h4><span data-tooltip aria-haspopup="true" class="has-tip" title="<%=tasting.name %>"><%= link_to tasting.name, tasting_wines_path(tasting) %></span></h4>
           </div>
 
           <%= image_tag(tasting.photo) %>
@@ -24,3 +24,4 @@
     </div>
   </div>
       <% end %>
+      

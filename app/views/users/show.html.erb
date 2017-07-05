@@ -1,0 +1,18 @@
+<h1>User Profile</h1></br>
+<div class="medium-4 medium-centered columns">
+   <div class="card">
+      <h3 class="text-center"><%= @user.first_name %> <%= @user.last_name %></h3>
+      <div class="card-section">
+        <% @tastings = Tasting.where(user_id: @user.id).order("created_at") %>
+         <% @tastings.each do |tasting| %>
+         <span data-tooltip aria-haspopup="true" class="has-tip" title="<%=tasting.name %>"><%= link_to tasting.name, tasting_path(tasting) %></span>
+         <%= image_tag(tasting.photo) %>
+         <p><%= tasting.description %></p>
+         <% end %>
+       </div>
+     </div>
+     <ul class="button-group stack-for-small even-2 radius text-center">
+      <li><button type="button" class="button"><%= link_to "Delete Account", user_path(current_user), data: {:confirm => 'Are you sure?'}, :method => :delete  %></button></li>
+      <li><button type="button" class="button"><%= link_to "Edit Profile", edit_user_registration_path %></button></li>
+     </ul>
+  </div>
