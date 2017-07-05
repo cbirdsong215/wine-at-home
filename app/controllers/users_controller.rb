@@ -30,24 +30,8 @@ class UsersController < ApplicationController
     @user = User.find(current_user.id)
   end
 
-  def destroy
-    unless @user.destroyable_by?(current_user, @user)
-      flash[:alert] = "You do not have permission to delete that user."
-      redirect_to :root
-    else
-      reviews = Review.where(user_id: current_user)
-      reviews.destroy_all
-      #foods = Food.where(user_id: current_user)
-      #foods.destroy_all
-      #current_user.destroy
-      #respond_to do |format|
-        format.html { redirect_to root_path, notice: 'Profile was successfully delete.' }
-        format.json { head :no_content }
-      end
-    end
-  end
 
-#  private
+ private
 
   def set_user
     @user = User.find(params[:id])
