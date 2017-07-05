@@ -1,0 +1,35 @@
+<div class="small-12 medium-8 columns">
+  <div class="row">
+    <div class="text-center"><h1><%= @tasting.name%>: Choose Your Wines<h1></div>
+    </div>
+  </div>
+</br>
+  <% @wines.each do |wine| %>
+  <div class="row">
+  <div class="columns">
+    <table class="hover">
+      <thead>
+        <tr>
+          <th width="300">Wine</th>
+          <th width="150">Appellation/Region</th>
+          <th width="300">Grape/s</th>
+          <th width="100">Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="items">
+          <td><%= wine.name%> </td>
+          <td><%=wine.appellation%></td>
+          <td><%=wine.varietal%> </td>
+          <td><%=wine.year%></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</br>
+  <% end %>
+
+
+  <div class="button"><%= link_to "Add Wines", new_tasting_wine_path(@tasting) %>
+  </div>

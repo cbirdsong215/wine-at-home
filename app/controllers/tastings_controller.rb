@@ -1,5 +1,5 @@
 class TastingsController < ApplicationController
-  before_action :set_food, only: [:show, :edit, :update, :destroy]
+  #before_action :set_food, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:show, :index]
 
   def index
@@ -7,10 +7,12 @@ class TastingsController < ApplicationController
   end
 
   def show
+     @tasting = Tasting.find(params[:id])
   end
 
   def new
-    @tasting = Tatsing.new
+    @tasting = Tasting.new
+
   end
 
   def edit
@@ -24,9 +26,9 @@ class TastingsController < ApplicationController
     @tasting = Tasting.new(tasting_params)
     if @tasting.save
       flash[:alert] = "Tasting added successfully"
-      redirect_to food_path(@food)
+      redirect_to tasting_path(@tasting)
     else
-      flash[:alert] = @food.errors.full_messages.to_sentence
+      flash[:alert] = @tasting.errors.full_messages.to_sentence
       render :new
     end
   end
@@ -62,7 +64,7 @@ class TastingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tasting_params
-      params.require(:food).permit(:name, :description, :photo, :user_id).merge(user_id: current_user.id)
+      params.require(:tasting).permit(:name, :description, :photo, :user_id).merge(user_id: current_user.id)
     end
 
     def editable_by?(user)
