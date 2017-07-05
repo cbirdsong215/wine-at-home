@@ -22,6 +22,8 @@ gem 'jbuilder', '~> 2.5'
 gem "figaro"
 gem 'fog'
 gem 'net-ssh'
+gem 'jquery'
+gem 'jquery-rails'
 
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
