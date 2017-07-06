@@ -1,12 +1,12 @@
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CommentBox from './components/CommentBox';
+import Feed from './components/feed';
 
 
 $(function() {
   ReactDOM.render(
-    <CommentBox/>,
-    document.getElementById('commentBox')
+    <Feed />,
+    document.getElementById('comments')
   );
 });

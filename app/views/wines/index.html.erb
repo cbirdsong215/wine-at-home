@@ -6,7 +6,7 @@
 </br>
   <% @wines.each do |wine| %>
   <div class="row">
-  <div class="columns">
+  <div class="small-12 small-centered columns">
     <table class="hover">
       <thead>
         <tr>
@@ -29,7 +29,10 @@
 </div>
 </br>
   <% end %>
-
-
+  <div class="comment-section-box">
+    <div class="row">
+      <div id='comments'></div>
+    </div>
+  </div>
   <div class="button"><%= link_to "Add Wines", new_tasting_wine_path(@tasting) %>
   </div>

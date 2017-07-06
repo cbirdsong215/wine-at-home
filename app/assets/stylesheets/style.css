@@ -35,8 +35,6 @@ text-align: center;
 .card {
   padding-top: 30px;
   margin: auto;
-
-
 }
 
 .box {
@@ -67,4 +65,9 @@ margin: auto;
 .text-center {
   padding-top: 60px;
   padding-bottom: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
 }

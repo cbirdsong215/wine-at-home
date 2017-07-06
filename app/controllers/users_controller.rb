@@ -22,12 +22,23 @@ class UsersController < ApplicationController
   end
 
   def edit
-      redirect_to :root
-      flash[:alert] = "Edit your profile by clicking your 'profile' link"
+    @user = current_user
   end
 
   def show
     @user = User.find(current_user.id)
+  end
+
+  def destroy
+    reviews = Review.where(user_id: current_user)
+    reviews.destroy_all
+    foods = Food.where(user_id: current_user)
+    foods.destroy_all
+    current_user.destroy
+    respond_to do |format|
+      format.html { redirect_to root_path, notice: 'Profile was successfully delete.' }
+      format.json { head :no_content }
+    end
   end
 
 
