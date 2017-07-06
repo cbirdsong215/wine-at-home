@@ -21,7 +21,7 @@
       <nav aria-label="You are here:" role="navigation">
         <ul class="breadcrumbs">
          <li><a><%= link_to 'Home', root_path %></li>
-           <li><a href="pages/about">About</a></li>
+         <li><a><%= link_to 'About', about_path %></li>
          <% if current_user && current_user.admin == true %>
          <li><%= link_to 'All Users', admin_users_path %></li>
          <% end %></a>
@@ -51,7 +51,7 @@
 
     <div class="top-bar-right">
       <ul class="menu">
-        <table>
+        <table class="wine-searcher">
           <tr>
             <form class="search" name="searchform" method="GET" action="http://www.wine-searcher.com/wine-select.lml" target=_blank></td>
             <input type="hidden" name="Xfromsearch" value="Y">
@@ -71,6 +71,7 @@
   <script src="js/vendor/jquery.js"></script>
     <script src="js/vendor/what-input.js"></script>
     <script src="js/vendor/foundation.js"></script>
+
 
 
   </body>
