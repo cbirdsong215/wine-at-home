@@ -1,7 +1,7 @@
-<h1>User Profile</h1></br>
+
 <div class="medium-4 medium-centered columns">
    <div class="card">
-      <h3 class="text-center"><%= @user.first_name %> <%= @user.last_name %></h3>
+      <h1 class="text-center"><%= @user.first_name %> <%= @user.last_name %></h1>
       <div class="card-section">
         <% @tastings = Tasting.where(user_id: @user.id).order("created_at") %>
          <% @tastings.each do |tasting| %>
