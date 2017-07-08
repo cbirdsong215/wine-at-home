@@ -26,7 +26,6 @@
          <li><%= link_to 'All Users', admin_users_path %></li>
          <% end %></a>
          <li><a><%= link_to "Add a Tasting", new_tasting_path %></a></li>
-         <li><a><%= link_to "Food Pairings"%></a></li>
        </ul>
      </nav>
       </div>
@@ -53,7 +52,7 @@
       <ul class="menu">
         <table class="wine-searcher">
           <tr>
-            <form class="search" name="searchform" method="GET" action="http://www.wine-searcher.com/wine-select.lml" target=_blank></td>
+            <form class="search" name="searchform" method="GET" action="http://www.wine-searcher.com/wine-select.lml" target=_blank></td></form>
             <input type="hidden" name="Xfromsearch" value="Y">
             <td><input id="Xwinename" type="TEXT" name="Xwinename" value="" title="Search phrase" placeholder="Find Wines on Wine-Searcher.com" style="width:275px;"></td>
             <td><input id="Xvintage" type="TEXT" size="4" maxlength="4" name="Xvintage" value="" title="Vintage (use 'NV' for non-vintage). Leave blank to search all vintages."  placeholder="Vintage"style="width:76px;font-size:16px;"></td>
@@ -61,6 +60,7 @@
           </tr>
         </table>
     </div>
+
 
 
 

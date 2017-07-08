@@ -7,6 +7,11 @@ font-family: 'Abril Fatface', cursive;
 text-align: center;
 }
 
+h2 {
+font-family: 'Abril Fatface', cursive;
+text-align: center;
+}
+
 
 .top-bar {
   background-color: black;
@@ -70,4 +75,21 @@ margin: auto;
 table {
     border-collapse: collapse;
     width: 100%;
+}
+
+
+
+
+#button1 {
+  display: inline-block;
+  margin: 10px;
+}
+#button2 {
+  display: inline-block;
+  margin: 10px;
+
+}
+
+.about {
+  font-family: 'Fjalla One', sans-serif;
 }
