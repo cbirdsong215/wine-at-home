@@ -1,0 +1,35 @@
+<div class="small-12 small-centered medium-8 columns">
+  <div class="row">
+    <div class="text-center"><h1><%= @tasting.name%><h1></div>
+  </div>
+</div>
+
+
+  <% @pairings.each do |pairing| %>
+  <div class="row">
+  <div class="small-12 small-centered columns">
+    <table class="hover">
+      <thead>
+        <tr>
+          <th width="300">Food Pairing</th>
+          <th width="300">Serving Suggestions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="items">
+          <td><%= pairing.name%> </td>
+          <td><%=pairing.serving_suggestion%></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</br>
+
+  <% end %>
+  <div class="small-12 small-centered medium-8 columns" style="display: inline-block;">
+    <div class="row">
+      <div class="button"><%= link_to "Add a Pairing", new_tasting_pairing_path(@tasting) %>
+      </div>
+    </div>
+  </div>

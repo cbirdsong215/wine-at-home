@@ -1,6 +1,6 @@
 <div class="small-12 medium-8 columns">
   <div class="row">
-    <div class="text-center"><h1><%= @tasting.name%>: Choose Your Wines<h1></div>
+    <div class="text-center"><h2><%= @tasting.name%>: Choose Your Wines<h2></div>
     </div>
   </div>
 </br>
@@ -29,10 +29,15 @@
 </div>
 </br>
   <% end %>
+<div class="small-12 small-centered columns">
   <div class="comment-section-box">
-    <div class="row">
+    <div class="row" style="text-align: center;">
       <div id='comments'></div>
     </div>
   </div>
-  <div class="button"><%= link_to "Add Wines", new_tasting_wine_path(@tasting) %>
-  </div>
+</div>
+</br>
+<div class="wrapper" style="text-align:center;">
+  <button class="button" id="button1"><%= link_to "Add Wines", new_tasting_wine_path(@tasting) %></button>
+  <button class="button" id="button2"><%= link_to "View Food Pairings", tasting_pairings_path(@tasting) %></button>
+</div>
